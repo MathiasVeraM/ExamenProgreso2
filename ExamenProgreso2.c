@@ -8,19 +8,30 @@
 //El uso de funciones no me sirviò, asì que a usar main
 int main(){
     srand(time(NULL));
-    int i, j, sumaProgreso=0, sumaEstudiante=0, promedioProgreso=0, promedioEstudiante=0;
+    int i, j, k, sumaProgreso=0, sumaEstudiante=0, promedioProgreso=0, promedioEstudiante=0;
     int Semestre[progreso][alumnos];
+    int PromedioProgreso[3];
     for(i=0;i<progreso;i++){
         for(j=0;j<alumnos;j++){
             Semestre[i][j]=rand()%11;
-            sumaProgreso=sumaProgreso + Semestre[i][j];
             printf("%d ", Semestre[i][j]);
         }
         printf("\n");
-        promedioProgreso = sumaProgreso/alumnos;
-        printf("\tEl promedio del progreso %d es %d\n", i+1, promedioProgreso);
+    }
+    for(i=0;i<progreso;i++){
+        for(j=0;j<alumnos;j++){
+            sumaProgreso=sumaProgreso + Semestre[i][j];
+            promedioProgreso = sumaProgreso/alumnos;
+        }
+        for(k=0;k<3;k++){
+            PromedioProgreso[k]=promedioProgreso;
+        }
+    }
+    for(k=0;k<3;k++){
+        printf("\tEl promedio del progreso %d es %d\n", k+1, PromedioProgreso[k]);
         sumaProgreso = 0;
         promedioProgreso = 0;
     }
+    
     return 0;
 }
