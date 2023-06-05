@@ -10,6 +10,7 @@ void CrearMatriz(){
     int Semestre[progreso][alumnos];
     for(i=0;i<progreso;i++){
         for(j=0;j<alumnos;j++){
+            printf("Alumno #%d ", j+1);
             Semestre[i][j]=rand()%11;
             printf("%d ", Semestre[i][j]);
         }
