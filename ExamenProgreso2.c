@@ -9,6 +9,7 @@
 int main(){
     srand(time(NULL));
     int i, j, k, sumaProgreso=0, sumaEstudiante=0, promedioProgreso=0, promedioEstudiante=0;
+    int mayor=0, alumnoPromedioMayor=0;
     int Semestre[progreso][alumnos];
     int PromedioProgreso[3];
     for(i=0;i<progreso;i++){
@@ -23,13 +24,19 @@ int main(){
         sumaProgreso = 0;
         promedioProgreso = 0;
     }
-    for(j=0;j<progreso;j++){
-        for(i=0;i<alumnos;i++){
+    for(i=0;i<alumnos;i++){
+        for(j=0;j<progreso;j++){
             sumaEstudiante = sumaEstudiante + Semestre[i][j];
             promedioEstudiante = sumaEstudiante/progreso;
+            if(promedioEstudiante>mayor){
+                mayor=promedioEstudiante;
+                alumnoPromedioMayor=i+1;
+            }
         }
-        printf("\n");
-        printf("El promedio del alumno %d es %d\n", j+1, promedioEstudiante);
+        printf("El promedio del alumno %d es %d\n", i+1, promedioEstudiante);
+        if(i==alumnos-1){
+            printf("El estudiante %d es el que tiene mayor promedio, un promedio de %d en el semestre ", alumnoPromedioMayor, promedioEstudiante);
+        }
         sumaEstudiante = 0;
         promedioEstudiante = 0;
     }
