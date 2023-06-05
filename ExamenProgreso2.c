@@ -25,20 +25,18 @@ int main(){
         promedioProgreso = 0;
     }
     for(i=0;i<alumnos;i++){
-        for(j=0;j<progreso;j++){
-            sumaEstudiante = sumaEstudiante + Semestre[i][j];
-            promedioEstudiante = sumaEstudiante/progreso;
-            if(promedioEstudiante>mayor){
-                mayor=promedioEstudiante;
-                alumnoPromedioMayor=i+1;
-            }
+        j=0;
+        sumaEstudiante = sumaEstudiante + Semestre[i][j];
+        promedioEstudiante = sumaEstudiante/progreso;
+        if(promedioEstudiante>mayor){
+            mayor=promedioEstudiante;
+            alumnoPromedioMayor=i+1;
         }
-        printf("El promedio del alumno %d es %d\n", i+1, promedioEstudiante);
-        if(i==alumnos-1){
-            printf("El estudiante %d es el que tiene mayor promedio, un promedio de %d en el semestre ", alumnoPromedioMayor, promedioEstudiante);
-        }
-        sumaEstudiante = 0;
-        promedioEstudiante = 0;
+        j++;
     }
+    printf("El estudiante %d es el que tiene mayor promedio, un promedio de %d en el semestre ", alumnoPromedioMayor, promedioEstudiante);
+    printf("El promedio del alumno %d es %d\n", i+1, promedioEstudiante);
+    sumaEstudiante = 0;
+    promedioEstudiante = 0; 
     return 0;
 }
