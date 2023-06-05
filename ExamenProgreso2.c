@@ -15,23 +15,23 @@ int main(){
         for(j=0;j<alumnos;j++){
             Semestre[i][j]=rand()%11;
             printf("%d ", Semestre[i][j]);
-        }
-        printf("\n");
-    }
-    for(i=0;i<progreso;i++){
-        for(j=0;j<alumnos;j++){
             sumaProgreso=sumaProgreso + Semestre[i][j];
             promedioProgreso = sumaProgreso/alumnos;
         }
-        for(k=0;k<3;k++){
-            PromedioProgreso[k]=promedioProgreso;
-        }
-    }
-    for(k=0;k<3;k++){
-        printf("\tEl promedio del progreso %d es %d\n", k+1, PromedioProgreso[k]);
+        printf("\n");
+        printf("\tEl promedio del progreso %d es %d\n", i+1,promedioProgreso);
         sumaProgreso = 0;
         promedioProgreso = 0;
     }
-    
+    for(j=0;j<progreso;j++){
+        for(i=0;i<alumnos;i++){
+            sumaEstudiante = sumaEstudiante + Semestre[i][j];
+            promedioEstudiante = sumaEstudiante/progreso;
+        }
+        printf("\n");
+        printf("El promedio del alumno %d es %d\n", j+1, promedioEstudiante);
+        sumaEstudiante = 0;
+        promedioEstudiante = 0;
+    }
     return 0;
 }
